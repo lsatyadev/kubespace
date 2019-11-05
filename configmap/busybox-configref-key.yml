@@ -1,0 +1,17 @@
+# Create config map from the file config_file.properites
+# kubectl create configmap busybox-config --from-file=config_file.properties
+
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: busybox
+spec:
+  containers:
+  - image: busybox
+    name: busybox
+    env:
+    - name: CONF_MAP_NAME
+      valueFrom:
+        configMapKeyRef:
+          name: busybox-config
+          key: YML_CONF_ENV

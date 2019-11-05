@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my_registry
+type: Opaque
+data:
+  docker-server: docker.io
+  docker-username: lsatyadev
+  docker-password: H@numan201
+  docker-email: satya.office@gmail.com
